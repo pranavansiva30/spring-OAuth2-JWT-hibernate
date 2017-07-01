@@ -16,7 +16,7 @@ import org.springframework.security.web.util.matcher.RequestMatcher;
 public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
     
    
-    private String resourceId="spring-OAuth2-JWT";
+    private String resourceId="spring-OAuth2-JWT-hibernate";
     
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) {
