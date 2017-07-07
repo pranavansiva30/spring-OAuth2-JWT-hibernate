@@ -126,6 +126,12 @@
 			<artifactId>spring-security-jwt</artifactId>
 			<version>1.0.8.RELEASE</version>
 		</dependency>
+		<!-- Spring + aspects -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
