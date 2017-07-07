@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/resources")
 public class ResourceController {
 
-   @PreAuthorize("hasRole('ROLE_USER')")
+  // @PreAuthorize("hasRole('ROLE_USER')")
     @RequestMapping(value="user", method=RequestMethod.GET)
     public String helloUser() {
         return "hello user";
     }
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+   // @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(value="admin", method=RequestMethod.GET)
     public String helloAdmin() {
         return "hello admin";

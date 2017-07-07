@@ -49,6 +49,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
+                .antMatchers("/resources/user").access("hasAnyRole('USER')")          
+                .antMatchers("/resources/admin").hasRole("ADMIN")
+                // restricting all access to /** to authenticated users
+                .antMatchers("/resources/**").authenticated()
                 .anyRequest().authenticated().and().formLogin()
                 .and().httpBasic()
                 .and().csrf().disable();
