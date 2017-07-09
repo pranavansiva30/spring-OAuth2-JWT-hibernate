@@ -41,13 +41,15 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     public void configure(HttpSecurity http) throws Exception {
         // @formatter:off
         	http.requestMatcher(new OAuthRequestedMatcher())
+        	.csrf().disable()
+            .anonymous().disable()
                 .authorizeRequests()
                 	.antMatchers(HttpMethod.OPTIONS).permitAll()
                 	.antMatchers("/resources/user").access("hasAnyRole('USER')")          
                     .antMatchers("/resources/admin").hasRole("ADMIN")
                     // restricting all access to /** to authenticated users
                     .antMatchers("/resources/**").authenticated();
-        // @formatter:on
+        	
     }
     
     private static class OAuthRequestedMatcher implements RequestMatcher {
